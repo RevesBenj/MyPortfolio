@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benjelyn Reves Patiag - Senior .NET & Fintech Engineer</title>
+  <meta name="description" content="Senior .NET Software Engineer & Fintech Specialist with 14+ years in enterprise systems, banking, and trading risk." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --deep:     #0C0F1A;
+      --surface:  #141826;
+      --panel:    #1C2235;
+      --rose:     #C4848E;
+      --rose-lt:  #EACDD0;
+      --rose-dk:  #9B5963;
+      --cream:    #F0EBE3;
+      --muted:    #8892A4;
+      --border:   #252E47;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--deep);
+      color: var(--cream);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Noise overlay */
+    body::before {
+      content: "";
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      opacity: 0.022;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    /* ─── LAYOUT ─── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; width: 100%; }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--deep); }
+    ::-webkit-scrollbar-thumb { background: rgba(196,132,142,0.35); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(196,132,142,0.6); }
+
+    /* ─── PROGRESS BAR ─── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 100;
+      height: 2px; width: 0;
+      background: linear-gradient(90deg, #C4848E, #EACDD0, #C4848E);
+      transition: width 0.1s linear;
+    }
+
+    /* ─── NAV ─── */
+    nav.topnav {
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid rgba(196,132,142,0.1);
+      background: rgba(12,15,26,0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.5rem;
+      text-decoration: none; color: rgba(240,235,227,0.9);
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
+    }
+    .nav-brand .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--rose); opacity: 0.8;
+    }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted);
+      font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+
+    /* ─── BUTTONS ─── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: linear-gradient(135deg, var(--rose), var(--rose-dk));
+      color: #fff; border-radius: 0.75rem;
+      padding: 0.6rem 1.2rem; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 18px rgba(196,132,142,0.3);
+      transition: transform 0.22s, box-shadow 0.22s, filter 0.22s;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(196,132,142,0.45);
+      filter: brightness(1.08);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: transparent; color: var(--cream);
+      border-radius: 0.75rem; padding: 0.58rem 1.2rem;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid rgba(196,132,142,0.3);
+      transition: all 0.22s;
+    }
+    .btn-ghost:hover {
+      background: rgba(196,132,142,0.1);
+      border-color: rgba(196,132,142,0.55);
+      transform: translateY(-2px);
+    }
+
+    /* ─── GLASS CARD ─── */
+    .glass {
+      background: rgba(20,24,38,0.72);
+      border: 1px solid rgba(196,132,142,0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 1.25rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .glass:hover {
+      border-color: rgba(196,132,142,0.25);
+      box-shadow: 0 0 30px rgba(196,132,142,0.09);
+    }
+
+    /* ─── TAG / PILL ─── */
+    .tag {
+      display: inline-flex; align-items: center;
+      border-radius: 9999px;
+      border: 1px solid rgba(196,132,142,0.2);
+      background: rgba(196,132,142,0.07);
+      padding: 0.22rem 0.75rem;
+      font-size: 0.68rem; color: var(--rose-lt); font-weight: 500;
+      letter-spacing: 0.02em; transition: all 0.2s;
+    }
+    .tag:hover { background: rgba(196,132,142,0.14); border-color: rgba(196,132,142,0.4); }
+
+    /* Shimmer pill */
+    .skill-pill {
+      position: relative; overflow: hidden;
+      display: inline-flex; align-items: center;
+      border-radius: 9999px;
+      border: 1px solid rgba(196,132,142,0.18);
+      background: rgba(196,132,142,0.06);
+      padding: 0.26rem 0.85rem;
+      font-size: 0.68rem; color: var(--rose-lt); font-weight: 500;
+      letter-spacing: 0.03em; transition: all 0.25s; cursor: default;
+    }
+    .skill-pill:hover {
+      background: rgba(196,132,142,0.14);
+      border-color: rgba(196,132,142,0.42);
+      box-shadow: 0 0 12px rgba(196,132,142,0.12);
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(196,132,142,0.3), transparent);
+    }
+
+    /* ─── SECTION ─── */
+    section { padding: 5rem 0; }
+    section:target { scroll-margin-top: 5rem; }
+    .section-eyebrow {
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--rose); font-weight: 600; margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 2.4rem; font-weight: 700; color: var(--cream);
+      line-height: 1.1; letter-spacing: -0.01em;
+    }
+    .section-sub {
+      margin-top: 0.5rem; font-size: 0.82rem; color: var(--muted);
+      max-width: 36rem; line-height: 1.7;
+    }
+    .section-head { margin-bottom: 2.5rem; }
+
+    /* ─── GRADIENT TEXT ─── */
+    .grad-rose {
+      background: linear-gradient(135deg, var(--rose-lt) 0%, var(--rose) 55%, #E8A0A8 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ─── AVAILABILITY BADGE ─── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid rgba(196,132,142,0.28);
+      background: rgba(196,132,142,0.08);
+      border-radius: 9999px; padding: 0.4rem 1rem;
+      font-size: 0.7rem; font-weight: 500; color: var(--rose-lt);
+      letter-spacing: 0.03em;
+    }
+    .pulse-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--rose); flex-shrink: 0;
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%,100% { box-shadow: 0 0 0 0 rgba(196,132,142,0.7); }
+      50%      { box-shadow: 0 0 0 5px rgba(196,132,142,0); }
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative; overflow: hidden;
+      padding: 5.5rem 0 5rem;
+    }
+    .hero-mesh {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 65% 50% at 85% 15%, rgba(196,132,142,0.1) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 45% at 15% 85%, rgba(196,132,142,0.06) 0%, transparent 60%);
+    }
+
+    /* Decorative rotating ring */
+    .deco-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(196,132,142,0.13);
+      pointer-events: none;
+    }
+    .ring-1 { width: 360px; height: 360px; top:-90px; right:-90px; animation: spinCW 22s linear infinite; }
+    .ring-2 { width: 220px; height: 220px; bottom:30px; left:-70px; animation: spinCCW 16s linear infinite; }
+
+    @keyframes spinCW  { to { transform: rotate(360deg);  } }
+    @keyframes spinCCW { to { transform: rotate(-360deg); } }
+
+    .hero-grid {
+      display: grid; gap: 3.5rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      position: relative; z-index: 1;
+    }
+
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .nav-links { display: none; }
+    }
+
+    .hero-name {
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      font-weight: 700; line-height: 1.02;
+    }
+    .hero-italic {
+      font-size: 1.3rem; font-style: italic;
+      color: rgba(240,235,227,0.6); font-weight: 400;
+      display: block; margin-bottom: 0.3rem;
+    }
+    .hero-bio {
+      margin-top: 1rem; font-size: 0.88rem; color: var(--muted);
+      max-width: 30rem; line-height: 1.8;
+    }
+    .hero-bio strong { color: rgba(240,235,227,0.82); font-weight: 600; }
+    .hero-ctas { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    /* Metrics */
+    .metrics { margin-top: 2.2rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; }
+    .metric {
+      background: rgba(20,24,38,0.72);
+      border: 1px solid rgba(196,132,142,0.12);
+      border-radius: 1rem; padding: 1rem;
+      text-align: center; backdrop-filter: blur(8px);
+      transition: border-color 0.3s;
+    }
+    .metric:hover { border-color: rgba(196,132,142,0.3); }
+    .metric-val { font-size: 1.9rem; font-weight: 700; line-height: 1; }
+    .metric-lbl { margin-top: 0.3rem; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); line-height: 1.3; }
+
+    /* Hero card */
+    .hero-card {
+      max-width: 280px; width: 100%; justify-self: center;
+      animation: float 5s ease-in-out infinite;
+    }
+    .hero-card-inner {
+      background: rgba(20,24,38,0.75);
+      border: 1px solid rgba(196,132,142,0.15);
+      border-radius: 1.25rem; padding: 1.75rem;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 50px rgba(196,132,142,0.08);
+    }
+    .profile-ring {
+      position: relative; width: 140px; height: 190px; margin: 0 auto;
+    }
+    .profile-glow {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,132,142,0.35), transparent);
+      filter: blur(16px);
+    }
+    .profile-img {
+      position: relative; width: 140px; height: 190px;
+      border-radius: 50%; object-fit: cover; object-position: center top;
+      border: 2px solid rgba(196,132,142,0.42);
+      display: block;
+    }
+    /* Placeholder when no photo */
+    .profile-placeholder {
+      position: relative; width: 140px; height: 140px;
+      border-radius: 50%; border: 2px solid rgba(196,132,142,0.42);
+      background: var(--panel);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 3.5rem;
+      color: var(--rose); font-weight: 700;
+    }
+    .card-name { text-align: center; margin-top: 1rem; }
+    .card-name h3 { font-size: 1.1rem; font-weight: 600; color: var(--cream); }
+    .card-name p  { font-size: 0.7rem; color: var(--muted); margin-top: 0.15rem; }
+    .card-loc     { font-size: 0.68rem; color: var(--rose-lt); margin-top: 0.2rem; text-align: center; }
+    .card-divider { height:1px; background: linear-gradient(90deg,transparent,rgba(196,132,142,0.28),transparent); margin: 1rem 0; }
+    .card-tags    { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+    .card-links   { display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.85rem; }
+
+    /* ─── ABOUT ─── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-card { padding: 1.75rem; }
+    .about-card p { font-size: 0.84rem; line-height: 1.9; color: var(--muted); }
+    .about-card p strong { color: rgba(240,235,227,0.85); font-weight: 600; }
+    .quick-facts { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+    .fact {
+      background: rgba(196,132,142,0.04); border: 1px solid rgba(196,132,142,0.1);
+      border-radius: 0.75rem; padding: 0.7rem 0.9rem;
+    }
+    .fact-k { font-size: 0.57rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+    .fact-v { font-size: 0.75rem; font-weight: 600; color: rgba(240,235,227,0.85); margin-top: 0.15rem; }
+
+    /* ─── SKILLS ─── */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    @media (max-width: 720px) { .skills-grid { grid-template-columns: 1fr; } }
+    .skill-card { padding: 1.5rem; }
+    .skill-cat { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--rose); font-weight: 600; margin-bottom: 0.9rem; }
+    .pill-group { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .certs-strip { margin-top: 1.25rem; padding: 1.25rem 1.5rem; }
+    .certs-list { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .cert-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; color: var(--muted);
+      background: rgba(196,132,142,0.05);
+      border: 1px solid rgba(196,132,142,0.14);
+      border-radius: 9999px; padding: 0.35rem 0.9rem;
+    }
+    .cert-icon { color: var(--rose); font-size: 0.75rem; }
+
+    /* ─── PROJECTS ─── */
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    @media (max-width: 720px) { .projects-grid { grid-template-columns: 1fr; } }
+    .project-card {
+      padding: 1.5rem; cursor: default;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(196,132,142,0.12);
+      border-color: rgba(196,132,142,0.3) !important;
+    }
+    .proj-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
+    .proj-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rose); box-shadow: 0 0 8px rgba(196,132,142,0.6); flex-shrink: 0; margin-top: 6px; }
+    .proj-title { font-size: 1.2rem; font-weight: 600; color: var(--cream); transition: color 0.2s; }
+    .project-card:hover .proj-title { color: var(--rose-lt); }
+    .proj-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
+    .proj-highlights { list-style: none; margin-top: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .proj-highlights li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.78rem; color: var(--muted); }
+    .proj-bullet { width: 6px; height: 6px; border-radius: 50%; background: var(--rose); opacity: 0.65; flex-shrink: 0; margin-top: 5px; }
+    .proj-link { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.25rem 0.7rem; text-decoration: none; }
+
+    /* ─── EXPERIENCE ─── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .exp-card {
+      padding: 1.5rem 1.75rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .exp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(196,132,142,0.1); }
+    .exp-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .exp-left { display: flex; gap: 0.75rem; align-items: flex-start; }
+    .timeline-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--rose); box-shadow: 0 0 10px rgba(196,132,142,0.5); flex-shrink: 0; margin-top: 5px; }
+    .exp-role { font-size: 1.2rem; font-weight: 600; color: var(--cream); }
+    .exp-company { font-size: 0.8rem; color: var(--muted); margin-top: 0.15rem; }
+    .exp-company span { color: rgba(240,235,227,0.8); font-weight: 500; }
+    .exp-date { font-size: 0.65rem; font-weight: 500; color: var(--rose-lt); border: 1px solid rgba(196,132,142,0.2); background: rgba(196,132,142,0.06); border-radius: 9999px; padding: 0.3rem 0.8rem; white-space: nowrap; flex-shrink: 0; }
+    .exp-bullets { list-style: none; margin-top: 1rem; margin-left: 1.4rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .exp-bullets li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+    .exp-tech { margin-top: 1rem; margin-left: 1.4rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    /* Education */
+    .edu-grid { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    @media (max-width: 600px) { .edu-grid { grid-template-columns: 1fr; } }
+    .edu-card {
+      background: rgba(196,132,142,0.04); border: 1px solid rgba(196,132,142,0.1);
+      border-radius: 1rem; padding: 1.1rem 1.25rem;
+    }
+    .edu-degree { font-size: 1rem; font-weight: 600; color: var(--cream); line-height: 1.3; }
+    .edu-school { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+    .edu-period { font-size: 0.62rem; color: var(--muted); opacity: 0.7; margin-top: 0.15rem; }
+    .edu-status {
+      display: inline-block; font-size: 0.58rem; color: var(--rose-lt);
+      border: 1px solid rgba(196,132,142,0.2); background: rgba(196,132,142,0.06);
+      border-radius: 9999px; padding: 0.15rem 0.55rem; margin-top: 0.5rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-card { padding: 2.5rem; position: relative; overflow: hidden; }
+    .contact-blob {
+      position: absolute; bottom: -3rem; right: -3rem;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,132,142,0.12), transparent);
+      pointer-events: none;
+    }
+    .contact-inner { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; position: relative; z-index: 1; }
+    @media (max-width: 720px) { .contact-inner { grid-template-columns: 1fr; } }
+    .contact-tagline { font-size: 1.4rem; font-style: italic; color: rgba(240,235,227,0.88); margin-bottom: 0.75rem; line-height: 1.4; }
+    .contact-body { font-size: 0.82rem; color: var(--muted); line-height: 1.8; max-width: 30rem; }
+    .contact-body strong { color: rgba(240,235,227,0.8); font-weight: 600; }
+    .contact-ctas { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .contact-facts { display: flex; flex-direction: column; gap: 0.85rem; }
+    .cfact { display: flex; align-items: center; gap: 0.75rem; }
+    .cfact-icon { font-size: 1rem; }
+    .cfact-k { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+    .cfact-v { font-size: 0.75rem; font-weight: 600; color: rgba(240,235,227,0.85); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid rgba(196,132,142,0.1); padding: 2rem 0;
+    }
+    .footer-inner {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 0.75rem;
+    }
+    .footer-inner span { font-size: 0.72rem; color: var(--muted); }
+    .footer-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rose); display: inline-block; margin-right: 0.5rem; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-9px); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+
+    /* Scroll-reveal base */
+    .reveal {
+      opacity: 0; transform: translateY(26px);
+      transition: opacity 0.65s cubic-bezier(.23,1,.32,1), transform 0.65s cubic-bezier(.23,1,.32,1);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ─── TECH ICONS in pills ─── */
+    .skill-pill .tech-icon {
+      width: 14px; height: 14px; margin-right: 5px;
+      object-fit: contain; flex-shrink: 0;
+      display: inline-block; vertical-align: middle;
+    }
+    .skill-pill .tech-icon.invert {
+      filter: brightness(0) invert(0.85);
+    }
+
+    /* ─── SOCIAL icon buttons ─── */
+    .btn-github {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: rgba(240,235,227,0.06); color: var(--cream);
+      border-radius: 0.75rem; padding: 0.58rem 1.1rem;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid rgba(240,235,227,0.15);
+      transition: all 0.22s;
+    }
+    .btn-github:hover {
+      background: rgba(240,235,227,0.12);
+      border-color: rgba(240,235,227,0.3);
+      transform: translateY(-2px);
+    }
+    .btn-linkedin {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: rgba(10,102,194,0.15); color: #6DB5E8;
+      border-radius: 0.75rem; padding: 0.58rem 1.1rem;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid rgba(10,102,194,0.35);
+      transition: all 0.22s;
+    }
+    .btn-linkedin:hover {
+      background: rgba(10,102,194,0.25);
+      border-color: rgba(10,102,194,0.6);
+      transform: translateY(-2px);
+    }
+
+    /* Hero entrance animations – these run immediately */
+    .anim-badge  { animation: fadeUp 0.55s ease both; }
+    .anim-name   { animation: fadeUp 0.65s 0.1s ease both; }
+    .anim-bio    { animation: fadeUp 0.65s 0.22s ease both; }
+    .anim-ctas   { animation: fadeUp 0.65s 0.34s ease both; }
+    .anim-metric { animation: fadeUp 0.65s 0.46s ease both; }
+    .anim-card   { animation: fadeIn 0.8s 0.3s ease both; }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- ───── NAV ───── -->
+  <nav class="topnav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-brand" href="#hero">
+          <span class="dot"></span>
+          Benjelyn Patiag
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/RevesBenj" target="_blank" title="GitHub" style="display:inline-flex;align-items:center;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/benjelynrevespatiag" target="_blank" title="LinkedIn" style="display:inline-flex;align-items:center;color:#6DB5E8;opacity:0.8;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+        <a class="btn-primary" href="Benjelyn_Patiag_Portfolio.pdf" target="_blank">
+          <!-- download icon -->
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16V8m0 8l-3-3m3 3 3-3M20 16v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2"/></svg>
+          View CV
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ───── HERO ───── -->
+  <section id="hero">
+    <div class="hero-mesh"></div>
+    <div class="deco-ring ring-1"></div>
+    <div class="deco-ring ring-2"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left content -->
+        <div>
+          <div class="badge anim-badge">
+            <span class="pulse-dot"></span>
+            Available for part-time / internship roles · Auckland, NZ
+          </div>
+
+          <div class="anim-name" style="margin-top:1.5rem;">
+            <h1 class="hero-name font-display">
+              <span class="hero-italic">Hello, I'm</span>
+              <span class="grad-rose">Benj.</span>
+            </h1>
+          </div>
+
+          <p class="hero-bio anim-bio">
+            Senior <strong>.NET Software Engineer & Fintech Specialist</strong> with
+            <strong>14+ years</strong> building mission-critical systems in banking,
+            trading risk, and enterprise automation across Singapore & APAC.
+            Currently completing a <strong>Master of Software Engineering</strong> in Auckland, NZ.
+          </p>
+
+          <div class="hero-ctas anim-ctas">
+            <a class="btn-primary" href="Benjelyn_Patiag_Portfolio.pdf" target="_blank">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 16V8m0 8l-3-3m3 3 3-3M20 16v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2"/></svg>
+              Download Portfolio PDF
+            </a>
+            <a class="btn-ghost" href="#projects">View Projects</a>
+          </div>
+
+          <div class="metrics anim-metric">
+            <div class="metric">
+              <div class="metric-val grad-rose font-display">14+</div>
+              <div class="metric-lbl">Years Experience</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val grad-rose font-display">3</div>
+              <div class="metric-lbl">Industries: Fintech · Banking · HR</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val grad-rose font-display">30%</div>
+              <div class="metric-lbl">SQL Performance Gain Achieved</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right card -->
+        <div class="hero-card anim-card">
+          <div class="hero-card-inner">
+            <div class="profile-ring">
+              <div class="profile-glow"></div>
+              <!--
+                ════════════════════════════════════════════════════
+                PHOTO: Place your photo file in the SAME folder as
+                this index.html and rename it to:  photo.jpg
+                ════════════════════════════════════════════════════
+              -->
+              <img
+                class="profile-img"
+                src="photo.jpg"
+                alt="Benjelyn Reves Patiag"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="profile-placeholder" style="display:none;">B</div>
+            </div>
+
+            <div class="card-name">
+              <h3>Benjelyn Reves Patiag</h3>
+              <p>Senior .NET & Fintech Engineer</p>
+              <p class="card-loc">📍 Auckland, New Zealand</p>
+            </div>
+
+            <div class="card-divider"></div>
+
+            <div class="card-tags">
+              <span class="tag">Fintech</span>
+              <span class="tag">Trading Risk</span>
+              <span class="tag">C# · .NET</span>
+              <span class="tag">MSE Student</span>
+            </div>
+
+            <div class="card-links">
+              <a class="btn-github" href="https://github.com/RevesBenj" target="_blank" style="font-size:0.65rem; padding:0.4rem 0.9rem;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a class="btn-linkedin" href="https://www.linkedin.com/in/benjelynrevespatiag" target="_blank" style="font-size:0.65rem; padding:0.4rem 0.9rem;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ───── ABOUT ───── -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Who I Am</p>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-sub">A brief overview of my background, expertise, and what drives me.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass about-card reveal" style="transition-delay:0.05s">
+          <p>I'm a <strong>Senior .NET Software Engineer</strong> and Technical Business Analyst who has spent over 14 years building and maintaining enterprise-grade systems across Singapore and the wider APAC region.</p>
+          <p style="margin-top:1rem">My core domain is financial technology - from real-time trading risk platforms and FX market data integrations, to complex ETL pipelines and regulatory reporting automation (MAS / DTCC).</p>
+          <p style="margin-top:1rem">I love solving hard, systems-level problems: optimising a query that saves minutes on every trade, designing an architecture that survives a production incident, or automating a reporting cycle that once took days to complete.</p>
+        </div>
+
+        <div class="glass about-card reveal" style="transition-delay:0.12s">
+          <p>After relocating to <strong>Auckland, New Zealand</strong>, I'm channelling that same rigour into modern tech stacks - Python, Django, Docker, and clean architecture patterns - through my <strong>Master of Software Engineering</strong> at Yoobee College.</p>
+          <p style="margin-top:1rem">I'm currently available for <strong style="color: var(--rose-lt)">part-time or internship roles</strong> in software development, and open to full-time opportunities from November 2026. I bring the depth of a senior engineer with the collaborative energy of someone genuinely excited to contribute.</p>
+
+          <div class="quick-facts">
+            <div class="fact"><div class="fact-k">Domain</div><div class="fact-v">Fintech & Banking</div></div>
+            <div class="fact"><div class="fact-k">Specialty</div><div class="fact-v">C# · SQL · .NET</div></div>
+            <div class="fact"><div class="fact-k">NZ Visa</div><div class="fact-v">Student Visa</div></div>
+            <div class="fact"><div class="fact-k">Availability</div><div class="fact-v">Part-time · Now</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ───── SKILLS ───── -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">What I Know</p>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-sub">Honed over 14 years across enterprise, fintech, and modern software engineering.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="glass skill-card reveal" style="transition-delay:0.05s">
+          <div class="skill-cat">Languages & Frameworks</div>
+          <div class="pill-group">
+            <span class="skill-pill">C#</span><span class="skill-pill">Python</span><span class="skill-pill">SQL</span>
+            <span class="skill-pill">VBA</span><span class="skill-pill">ASP.NET MVC</span><span class="skill-pill">.NET Core</span>
+            <span class="skill-pill">Django</span><span class="skill-pill">PowerShell</span>
+          </div>
+        </div>
+        <div class="glass skill-card reveal" style="transition-delay:0.1s">
+          <div class="skill-cat">Databases & Data Engineering</div>
+          <div class="pill-group">
+            <span class="skill-pill">SQL Server 2008–2022</span><span class="skill-pill">SSIS</span>
+            <span class="skill-pill">SSRS</span><span class="skill-pill">SSMS</span>
+            <span class="skill-pill">Markit EDM</span><span class="skill-pill">ETL Pipelines</span>
+            <span class="skill-pill">Performance Tuning</span>
+          </div>
+        </div>
+        <div class="glass skill-card reveal" style="transition-delay:0.15s">
+          <div class="skill-cat">Backend & Enterprise</div>
+          <div class="pill-group">
+            <span class="skill-pill">REST APIs</span><span class="skill-pill">Windows Services</span>
+            <span class="skill-pill">OOP</span><span class="skill-pill">Layered Architecture</span>
+            <span class="skill-pill">System Integration</span><span class="skill-pill">Middleware</span>
+            <span class="skill-pill">FIX Protocol</span>
+          </div>
+        </div>
+        <div class="glass skill-card reveal" style="transition-delay:0.2s">
+          <div class="skill-cat">Cloud, DevOps & Tools</div>
+          <div class="pill-group">
+            <span class="skill-pill">Git / GitHub</span><span class="skill-pill">Docker</span>
+            <span class="skill-pill">IIS</span><span class="skill-pill">Windows Server</span>
+            <span class="skill-pill">CI/CD Basics</span><span class="skill-pill">JIRA</span>
+            <span class="skill-pill">Control-M</span><span class="skill-pill">Confluence</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass certs-strip reveal" style="margin-top:1.1rem; transition-delay:0.25s;">
+        <div class="skill-cat">Certifications</div>
+        <div class="certs-list">
+          <div class="cert-item"><span class="cert-icon">✓</span> Markit EDM Certified Developer (2019)</div>
+          <div class="cert-item"><span class="cert-icon">✓</span> MCITP - SQL Server Database Developer (Microsoft)</div>
+          <div class="cert-item"><span class="cert-icon">✓</span> MCTS - SQL Server Database Development (Microsoft)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ───── PROJECTS ───── -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">What I've Built</p>
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-sub">Enterprise systems, academic builds, and tools that solve real problems.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="glass project-card reveal" style="transition-delay:0.05s">
+          <div class="proj-header">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+                <span class="proj-dot"></span>
+                <h3 class="proj-title font-display">BestieCare Cleaning Service</h3>
+              </div>
+              <p class="proj-desc">A multi-role web application for managing cleaning services. Features Role-Based Access Control (RBAC) for Customers, Cleaners, and Admins, integrated booking workflows, and branch-level analytics dashboards.</p>
+            </div>
+            <a class="tag proj-link" href="https://github.com/RevesBenj/YCCIA_2511" target="_blank">
+              <svg width="11" height="11" fill="currentColor" viewBox="0 0 24 24" style="margin-right:3px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              Repo
+            </a>
+          </div>
+          <div class="pill-group">
+            <span class="skill-pill">Django</span><span class="skill-pill">Python</span>
+            <span class="skill-pill">SQLite</span><span class="skill-pill">Docker</span><span class="skill-pill">RBAC</span>
+          </div>
+          <ul class="proj-highlights">
+            <li><span class="proj-bullet"></span>Multi-branch support with role-based dashboards</li>
+            <li><span class="proj-bullet"></span>Full booking lifecycle: request → assign → complete</li>
+            <li><span class="proj-bullet"></span>Analytics summary for branch-level performance</li>
+          </ul>
+        </div>
+
+        <div class="glass project-card reveal" style="transition-delay:0.1s">
+          <div class="proj-header">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+                <span class="proj-dot"></span>
+                <h3 class="proj-title font-display">Trading Risk System</h3>
+              </div>
+              <p class="proj-desc">Sole developer for a real-time trading risk management system. Integrated live market data APIs for FX and commodities trading and optimised SQL to achieve a ~30% improvement in query response time.</p>
+            </div>
+          </div>
+          <div class="pill-group">
+            <span class="skill-pill">C#</span><span class="skill-pill">ASP.NET 4.5</span>
+            <span class="skill-pill">SQL Server 2019</span><span class="skill-pill">FIX API</span><span class="skill-pill">SSRS</span>
+          </div>
+          <ul class="proj-highlights">
+            <li><span class="proj-bullet"></span>Real-time risk monitoring for live FX trading operations</li>
+            <li><span class="proj-bullet"></span>SQL performance tuning: indexes, execution plans, stored procedures</li>
+            <li><span class="proj-bullet"></span>Automated MAS / DTCC regulatory reporting</li>
+          </ul>
+        </div>
+
+        <div class="glass project-card reveal" style="transition-delay:0.15s">
+          <div class="proj-header">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+                <span class="proj-dot"></span>
+                <h3 class="proj-title font-display">AI CV ATS Analyzer</h3>
+              </div>
+              <p class="proj-desc">An AI-style CV and job description matching tool simulating an Applicant Tracking System (ATS). Extracts keywords, calculates match scores, and provides feedback to improve CV alignment.</p>
+            </div>
+            <a class="tag proj-link" href="https://github.com/RevesBenj/YCCIA_2511_MSE_PSE-Week8-A3" target="_blank">
+              <svg width="11" height="11" fill="currentColor" viewBox="0 0 24 24" style="margin-right:3px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              Repo
+            </a>
+          </div>
+          <div class="pill-group">
+            <span class="skill-pill">Python</span><span class="skill-pill">OOP</span>
+            <span class="skill-pill">Text Processing</span><span class="skill-pill">CLI</span><span class="skill-pill">Pylint</span>
+          </div>
+          <ul class="proj-highlights">
+            <li><span class="proj-bullet"></span>Keyword extraction and match-score breakdown</li>
+            <li><span class="proj-bullet"></span>Actionable feedback to improve CV–JD alignment</li>
+            <li><span class="proj-bullet"></span>Clean code standards enforced via Pylint</li>
+          </ul>
+        </div>
+
+        <div class="glass project-card reveal" style="transition-delay:0.2s">
+          <div class="proj-header">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+                <span class="proj-dot"></span>
+                <h3 class="proj-title font-display">Car Rental Architecture</h3>
+              </div>
+              <p class="proj-desc">A CLI application built with a strict layered architecture (Presentation, Application, Domain, Persistence). Automated business rules for availability checks and persistent Docker volume storage.</p>
+            </div>
+          </div>
+          <div class="pill-group">
+            <span class="skill-pill">Python</span><span class="skill-pill">SQLite</span>
+            <span class="skill-pill">Layered Arch.</span><span class="skill-pill">OOP</span><span class="skill-pill">Docker Compose</span>
+          </div>
+          <ul class="proj-highlights">
+            <li><span class="proj-bullet"></span>Layered architecture + repository pattern</li>
+            <li><span class="proj-bullet"></span>Auto-approval & preventive maintenance locking rules</li>
+            <li><span class="proj-bullet"></span>SQLite persistence with Docker volume-based storage</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ───── EXPERIENCE ───── -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Career Journey</p>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-sub">14+ years across fintech, banking, enterprise software, and finance automation.</p>
+      </div>
+
+      <div class="exp-list">
+
+        <div class="glass exp-card reveal" style="transition-delay:0.05s">
+          <div class="exp-header">
+            <div class="exp-left">
+              <span class="timeline-dot"></span>
+              <div>
+                <div class="exp-role font-display">Senior System / Application Developer Analyst</div>
+                <div class="exp-company"><span>Rhicon Currency Management Pte Ltd</span> · Singapore</div>
+              </div>
+            </div>
+            <div class="exp-date">Oct 2020 - Mar 2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="proj-bullet"></span>Sole developer for a real-time trading risk management system serving live FX and commodities trading.</li>
+            <li><span class="proj-bullet"></span>Designed and maintained C# ASP.NET applications integrated with SQL Server 2019; optimised complex SQL queries and indexing strategies, achieving a ~30% improvement in query performance.</li>
+            <li><span class="proj-bullet"></span>Integrated live market data APIs (FIX protocol) for FX and commodities trading systems.</li>
+            <li><span class="proj-bullet"></span>Developed automated regulatory reporting (MAS / DTCC) using C#, T-SQL, and SSRS.</li>
+            <li><span class="proj-bullet"></span>Led end-to-end cloud and server migration (Windows Server, IIS, SQL Server) from UAT to production.</li>
+            <li><span class="proj-bullet"></span>Managed full SDLC: requirements gathering, development, UAT, deployment, and production support.</li>
+          </ul>
+          <div class="exp-tech">
+            <span class="skill-pill">C#</span><span class="skill-pill">ASP.NET</span><span class="skill-pill">SQL Server</span>
+            <span class="skill-pill">SSRS</span><span class="skill-pill">REST APIs</span><span class="skill-pill">Windows Services</span><span class="skill-pill">Git</span>
+          </div>
+        </div>
+
+        <div class="glass exp-card reveal" style="transition-delay:0.1s">
+          <div class="exp-header">
+            <div class="exp-left">
+              <span class="timeline-dot"></span>
+              <div>
+                <div class="exp-role font-display">Senior Application / CADIS Developer (Markit EDM)</div>
+                <div class="exp-company"><span>UOB - United Overseas Bank</span> · Singapore · via Randstad Technologies</div>
+              </div>
+            </div>
+            <div class="exp-date">Jul 2017 - Jul 2020</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="proj-bullet"></span>Developed enterprise data management (EDM) solutions using SQL Server and Markit EDM (CADIS).</li>
+            <li><span class="proj-bullet"></span>Built ABOR / IBOR data load pipelines and ETL processes for fund data management.</li>
+            <li><span class="proj-bullet"></span>Designed stored procedures, views, and indexing strategies for significant performance improvement.</li>
+            <li><span class="proj-bullet"></span>Automated financial processes using VBA and SQL; provided Level 2 production support and job scheduling via Control-M.</li>
+          </ul>
+          <div class="exp-tech">
+            <span class="skill-pill">C#</span><span class="skill-pill">SQL Server</span><span class="skill-pill">SSIS</span>
+            <span class="skill-pill">ETL</span><span class="skill-pill">Markit EDM</span><span class="skill-pill">Control-M</span>
+          </div>
+        </div>
+
+        <div class="glass exp-card reveal" style="transition-delay:0.15s">
+          <div class="exp-header">
+            <div class="exp-left">
+              <span class="timeline-dot"></span>
+              <div>
+                <div class="exp-role font-display">Senior Systems Analyst</div>
+                <div class="exp-company"><span>Unilever Asia Private Ltd</span> · Singapore · via Randstad Technologies</div>
+              </div>
+            </div>
+            <div class="exp-date">Jun 2015 - Jun 2017</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="proj-bullet"></span>Designed and developed automation tools using VBA + SQL Server, replacing manual reporting processes across 7 countries.</li>
+            <li><span class="proj-bullet"></span>Built complex stored procedures, triggers, functions, and reporting queries.</li>
+            <li><span class="proj-bullet"></span>Delivered finance automation solutions reducing multi-day processing cycles significantly.</li>
+          </ul>
+        </div>
+
+        <div class="glass exp-card reveal" style="transition-delay:0.2s">
+          <div class="exp-header">
+            <div class="exp-left">
+              <span class="timeline-dot"></span>
+              <div>
+                <div class="exp-role font-display">Software Engineer</div>
+                <div class="exp-company"><span>Marshall Cavendish Education</span> · Singapore · via Enggsol Pte Ltd</div>
+              </div>
+            </div>
+            <div class="exp-date">Aug 2014 - May 2015</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="proj-bullet"></span>Developed new modules for ASP.NET web applications on an e-learning platform.</li>
+            <li><span class="proj-bullet"></span>Built mobile tracking modules for teacher and student management systems.</li>
+          </ul>
+        </div>
+
+        <div class="glass exp-card reveal" style="transition-delay:0.25s">
+          <div class="exp-header">
+            <div class="exp-left">
+              <span class="timeline-dot"></span>
+              <div>
+                <div class="exp-role font-display">Software Engineer / Application Consultant</div>
+                <div class="exp-company"><span>Multiple Enterprise Clients</span> · Philippines & Singapore</div>
+              </div>
+            </div>
+            <div class="exp-date">2008 - 2013</div>
+          </div>
+          <ul class="exp-bullets">
+            <li><span class="proj-bullet"></span>Developed backend enterprise systems for banking, HR, finance, and telecom organisations.</li>
+            <li><span class="proj-bullet"></span>Built and maintained applications using C#, ASP.NET (1.1–3.5), VB.NET, and SQL Server (2003–2008).</li>
+            <li><span class="proj-bullet"></span>Designed SSIS packages, SSRS reports, ETL workflows, and automation tools.</li>
+            <li><span class="proj-bullet"></span>Supported production systems in regulated financial environments.</li>
+          </ul>
+          <div class="exp-tech">
+            <span class="skill-pill">C#</span><span class="skill-pill">ASP.NET</span><span class="skill-pill">VB.NET</span>
+            <span class="skill-pill">SQL Server</span><span class="skill-pill">SSIS</span><span class="skill-pill">SSRS</span>
+            <span class="skill-pill">Excel VBA</span><span class="skill-pill">SharePoint</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education block -->
+      <div class="glass certs-strip reveal" style="margin-top:1.5rem; transition-delay:0.3s;">
+        <div class="skill-cat">Education</div>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="edu-degree font-display">Master of Software Engineering</div>
+            <div class="edu-school">Yoobee College of Creative Innovation, Auckland, New Zealand</div>
+            <div class="edu-period">Nov 2025 – Nov 2026</div>
+            <span class="edu-status">In Progress</span>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree font-display">Bachelor of Science in Computer Engineering</div>
+            <div class="edu-school">Polytechnic University of the Philippines, Manila</div>
+            <div class="edu-period">Jun 2003 – Mar 2008</div>
+            <span class="edu-status">Graduated</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ───── CONTACT ───── -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-eyebrow">Let's Connect</p>
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-sub">I'd love to hear from you - whether it's about a role, a project, or just a coffee chat.</p>
+      </div>
+
+      <div class="glass contact-card reveal">
+        <div class="contact-blob"></div>
+        <div class="contact-inner">
+          <div>
+            <p class="contact-tagline font-display">Ready to bring 14 years of enterprise expertise to your team.</p>
+            <p class="contact-body">
+              I'm currently seeking <strong>part-time or internship roles</strong> in software development in Auckland, NZ.
+              Whether it's backend systems, data engineering, or .NET - I'd love to explore how I can contribute.
+              Feel free to reach out via email or connect with me on LinkedIn.
+            </p>
+            <div class="contact-ctas">
+              <a class="btn-primary" href="mailto:benjelyn_reves@yahoo.com">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Send an Email
+              </a>
+              <a class="btn-linkedin" href="https://www.linkedin.com/in/benjelynrevespatiag" target="_blank">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a class="btn-github" href="https://github.com/RevesBenj" target="_blank">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-facts">
+            <div class="cfact">
+              <span class="cfact-icon">📧</span>
+              <div>
+                <div class="cfact-k">Email</div>
+                <div class="cfact-v">benjelyn_reves@yahoo.com</div>
+              </div>
+            </div>
+            <div class="cfact">
+              <span class="cfact-icon">📱</span>
+              <div>
+                <div class="cfact-k">Phone</div>
+                <div class="cfact-v">+64 22 499 8099</div>
+              </div>
+            </div>
+            <div class="cfact">
+              <span class="cfact-icon">📍</span>
+              <div>
+                <div class="cfact-k">Location</div>
+                <div class="cfact-v">Auckland, New Zealand</div>
+              </div>
+            </div>
+            <div class="cfact">
+              <span class="cfact-icon">🕐</span>
+              <div>
+                <div class="cfact-k">Availability</div>
+                <div class="cfact-v">Part-time · Immediate</div>
+              </div>
+            </div>
+            <div class="cfact">
+              <span class="cfact-icon">🎓</span>
+              <div>
+                <div class="cfact-k">Full-time open from</div>
+                <div class="cfact-v">November 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── FOOTER ───── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span><span class="footer-dot"></span>© 2025 Benjelyn Reves Patiag. All rights reserved.</span>
+        <div style="display:flex;align-items:center;gap:1rem;">
+          <a href="https://github.com/RevesBenj" target="_blank" title="GitHub"
+             style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--muted);font-size:0.7rem;text-decoration:none;opacity:0.7;transition:all 0.2s;"
+             onmouseover="this.style.opacity=1;this.style.color='#F0EBE3'" onmouseout="this.style.opacity=0.7;this.style.color=''">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            RevesBenj
+          </a>
+          <a href="https://www.linkedin.com/in/benjelynrevespatiag" target="_blank" title="LinkedIn"
+             style="display:inline-flex;align-items:center;gap:0.4rem;color:#6DB5E8;font-size:0.7rem;text-decoration:none;opacity:0.7;transition:all 0.2s;"
+             onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            benjelynrevespatiag
+          </a>
+          <!-- <span style="opacity:0.35;font-size:0.7rem;">Built with HTML · CSS · JS</span>-->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ───── SCRIPTS ───── -->
+  <script>
+    // ── Progress bar ──
+    const bar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    }, { passive: true });
+
+    // ── Scroll-reveal ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Active nav link ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => a.style.color = '');
+          const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (link) link.style.color = '#EACDD0';
+        }
+      });
+    }, { threshold: 0.4 });
+    sections.forEach(s => io.observe(s));
+
+    // ── Tech Icon Injection ──
+    // Uses Devicons CDN (free, open-source icon library)
+    const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
+
+    // Map: pill text (lowercase) → { path, invert }
+    // invert:true = apply white filter (for dark/black icons on dark bg)
+    const TECH_ICONS = {
+      // Languages
+      'c#':                    { p: 'csharp/csharp-original.svg' },
+      'python':                { p: 'python/python-original.svg' },
+      'sql':                   { p: 'azuresqldatabase/azuresqldatabase-original.svg' },
+      'vba':                   { p: 'javascript/javascript-original.svg' }, // closest available
+      'excel vba':             { p: 'microsoftexcel/microsoftexcel-plain.svg' },
+      'vb.net':                { p: 'dot-net/dot-net-original.svg' },
+      'vb6':                   { p: 'dot-net/dot-net-original.svg' },
+      'asp.net':               { p: 'dotnetcore/dotnetcore-original.svg' },
+      'asp.net mvc':           { p: 'dotnetcore/dotnetcore-original.svg' },
+      'asp.net 4.5':           { p: 'dotnetcore/dotnetcore-original.svg' },
+      'asp.net (1.1–3.5)':     { p: 'dotnetcore/dotnetcore-original.svg' },
+      '.net core':             { p: 'dotnetcore/dotnetcore-original.svg' },
+      'django':                { p: 'django/django-plain.svg' },
+      'powershell':            { p: 'powershell/powershell-original.svg' },
+      'html5':                 { p: 'html5/html5-original.svg' },
+      'html':                  { p: 'html5/html5-original.svg' },
+      'css3':                  { p: 'css3/css3-original.svg' },
+      'css':                   { p: 'css3/css3-original.svg' },
+      'javascript':            { p: 'javascript/javascript-original.svg' },
+      'json':                  { p: 'json/json-original.svg' },
+      'xml':                   { p: 'xml/xml-original.svg' },
+
+      // Databases
+      'sql server':            { p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'sql server 2019':       { p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'sql server 2008–2022':  { p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'sql server (2003–2008)':{ p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'ssis':                  { p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'ssrs':                  { p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'ssms':                  { p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'sqlite':                { p: 'sqlite/sqlite-original.svg' },
+      'mongodb':               { p: 'mongodb/mongodb-original.svg' },
+
+      // DevOps & Tools
+      'docker':                { p: 'docker/docker-original.svg' },
+      'docker compose':        { p: 'docker/docker-original.svg' },
+      'git':                   { p: 'git/git-original.svg' },
+      'git / github':          { p: 'git/git-original.svg' },
+      'github':                { p: 'github/github-original.svg', invert: true },
+      'jira':                  { p: 'jira/jira-original.svg' },
+      'confluence':            { p: 'confluence/confluence-original.svg' },
+      'visual studio':         { p: 'visualstudio/visualstudio-plain.svg' },
+      'vscode':                { p: 'vscode/vscode-original.svg' },
+      'sharepoint':            { p: 'sharepoint/sharepoint-original.svg' },
+      'windows server':        { p: 'windows8/windows8-original.svg' },
+      'iis':                   { p: 'windows8/windows8-original.svg' },
+
+      // By context
+      'rest apis':             { p: 'fastapi/fastapi-original.svg' },
+      'fix api':               { p: 'apachekafka/apachekafka-original.svg' },
+      'fix protocol':          { p: 'apachekafka/apachekafka-original.svg' },
+      'pylint':                { p: 'python/python-original.svg' },
+      'cli':                   { p: 'bash/bash-original.svg' },
+      'oop':                   { p: 'python/python-original.svg' },
+      'etl':                   { p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'etl pipelines':         { p: 'microsoftsqlserver/microsoftsqlserver-plain.svg' },
+      'rbac':                  { p: 'django/django-plain.svg' },
+    };
+
+    function injectTechIcons() {
+      document.querySelectorAll('.skill-pill').forEach(pill => {
+        // Skip if already has an icon
+        if (pill.querySelector('.tech-icon')) return;
+
+        const rawText = pill.textContent.trim();
+        const key = rawText.toLowerCase();
+        const icon = TECH_ICONS[key];
+        if (!icon) return;
+
+        const img = document.createElement('img');
+        img.src = DEVICON + icon.p;
+        img.alt = rawText + ' icon';
+        img.className = 'tech-icon' + (icon.invert ? ' invert' : '');
+        img.loading = 'lazy';
+        // Silently remove if 404
+        img.onerror = function() { this.remove(); };
+
+        pill.insertBefore(img, pill.firstChild);
+      });
+    }
+
+    // Run after page load so pills are all rendered
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', injectTechIcons);
+    } else {
+      injectTechIcons();
+    }
+  </script>
+
+</body>
+</html>
