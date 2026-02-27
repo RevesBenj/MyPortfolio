@@ -22,6 +22,14 @@
       --cream:    #F0EBE3;
       --muted:    #8892A4;
       --border:   #252E47;
+        /* Enterprise Blue (Primary Action) */
+      --enterprise-blue: #1E3A8A;
+      --enterprise-blue-light: #2563EB;
+      /* Accent Rose (Keep for highlights only) */
+      /* Success / Availability */
+      --success: #22C55E;
+      /* Dark background */
+      --bg-dark: #0B1120;
     }
 
     html { scroll-behavior: smooth; }
@@ -93,39 +101,68 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--cream); }
+/* ─── BUTTONS (Fintech Enterprise Mode) ─── */
 
-    /* ─── BUTTONS ─── */
     .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: linear-gradient(135deg, var(--rose), var(--rose-dk));
-      color: #fff; border-radius: 0.75rem;
-      padding: 0.6rem 1.2rem; font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      text-decoration: none; border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 4px 18px rgba(196,132,142,0.3);
-      transition: transform 0.22s, box-shadow 0.22s, filter 0.22s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      /* Corporate Blue Gradient */
+      background: linear-gradient(135deg, #1E3A8A, #2563EB);
+      color: #ffffff;
+
+      border-radius: 0.75rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      border: 1px solid rgba(37,99,235,0.35);
+      box-shadow: 0 4px 18px rgba(37,99,235,0.35);
+
+      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
       cursor: pointer;
     }
+
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(196,132,142,0.45);
-      filter: brightness(1.08);
-    }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: transparent; color: var(--cream);
-      border-radius: 0.75rem; padding: 0.58rem 1.2rem;
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      text-decoration: none; border: 1px solid rgba(196,132,142,0.3);
-      transition: all 0.22s;
-    }
-    .btn-ghost:hover {
-      background: rgba(196,132,142,0.1);
-      border-color: rgba(196,132,142,0.55);
-      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(37,99,235,0.5);
+      filter: brightness(1.06);
     }
 
+
+    /* Secondary / Ghost Button */
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      background: transparent;
+      color: var(--cream);
+
+      border-radius: 0.75rem;
+      padding: 0.58rem 1.2rem;
+
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.22s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: #2563EB;
+      color: #2563EB;
+      background: rgba(37,99,235,0.08);
+      transform: translateY(-2px);
+    }
     /* ─── GLASS CARD ─── */
     .glass {
       background: rgba(20,24,38,0.72);
