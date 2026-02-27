@@ -213,6 +213,38 @@
       background: var(--rose); flex-shrink: 0;
       animation: pulseDot 2s ease-in-out infinite;
     }
+
+        /* LinkedIn-style Open to Work badge */
+    .open-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1.1rem;
+      border-radius: 9999px;
+
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+
+      border: 1px solid rgba(34,197,94,0.45);
+      background: rgba(34,197,94,0.08);
+      color: #A7F3D0;   /* soft green text */
+    }
+
+    /* Green status dot */
+    .open-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22C55E;
+      animation: pulseGreen 2s ease-in-out infinite;
+    }
+
+    /* Green pulse animation */
+    @keyframes pulseGreen {
+      0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+      50%      { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+    }
     @keyframes pulseDot {
       0%,100% { box-shadow: 0 0 0 0 rgba(196,132,142,0.7); }
       50%      { box-shadow: 0 0 0 5px rgba(196,132,142,0); }
@@ -565,14 +597,14 @@
         <!-- Left content -->
         <div>
           <div class="badge anim-badge">
-            <span class="pulse-dot"></span>
+            <span class="open-dot"></span>
             Available for part-time / internship roles · Auckland, NZ
           </div>
 
           <div class="anim-name" style="margin-top:1.5rem;">
             <h1 class="hero-name font-display">
               <span class="hero-italic">Hello, I'm</span>
-              <span class="grad-rose">Benj.</span>
+              <span class="grad-rose">Benj</span>
             </h1>
           </div>
 
@@ -597,7 +629,7 @@
               <div class="metric-lbl">Years Experience</div>
             </div>
             <div class="metric">
-              <div class="metric-val grad-rose font-display">3</div>
+              <div class="metric-val grad-rose font-display">10</div>
               <div class="metric-lbl">Industries: Fintech · Banking · HR</div>
             </div>
             <div class="metric">
@@ -637,9 +669,11 @@
 
             <div class="card-tags">
               <span class="tag">Fintech</span>
-              <span class="tag">Trading Risk</span>
+              <span class="tag">Banking/Trading</span>
               <span class="tag">C# · .NET</span>
-              <span class="tag">MSE Student</span>
+              <span class="tag">FullStack</span>
+              <span class="tag">Specialist</span>
+              <span class="tag">Certified</span>
             </div>
 
             <div class="card-links">
@@ -673,14 +707,13 @@
       <div class="about-grid">
         <div class="glass about-card reveal" style="transition-delay:0.05s">
           <p>I'm a <strong>Senior .NET Software Engineer</strong> and Technical Business Analyst who has spent over 14 years building and maintaining enterprise-grade systems across Singapore and the wider APAC region.</p>
-          <p style="margin-top:1rem">My core domain is financial technology - from real-time trading risk platforms and FX market data integrations, to complex ETL pipelines and regulatory reporting automation (MAS / DTCC).</p>
-          <p style="margin-top:1rem">I love solving hard, systems-level problems: optimising a query that saves minutes on every trade, designing an architecture that survives a production incident, or automating a reporting cycle that once took days to complete.</p>
+          <p style="margin-top:1rem">My core experience is in financial technology, including real-time trading risk systems, FX market data integration, complex ETL pipelines, and regulatory reporting automation. I specialise in C#, ASP.NET, and SQL Server, ensuring systems are stable, scalable, and optimised for performance under heavy workloads.</p>
+          <p style="margin-top:1rem">I enjoy solving complex backend problems - optimising database queries to reduce execution time, designing resilient system architectures, and automating processes that transform multi-day manual tasks into efficient, reliable workflows.</p>
         </div>
 
         <div class="glass about-card reveal" style="transition-delay:0.12s">
           <p>After relocating to <strong>Auckland, New Zealand</strong>, I'm channelling that same rigour into modern tech stacks - Python, Django, Docker, and clean architecture patterns - through my <strong>Master of Software Engineering</strong> at Yoobee College.</p>
-          <p style="margin-top:1rem">I'm currently available for <strong style="color: var(--rose-lt)">part-time or internship roles</strong> in software development, and open to full-time opportunities from November 2026. I bring the depth of a senior engineer with the collaborative energy of someone genuinely excited to contribute.</p>
-
+          <p style="margin-top:1rem">I'm currently available for <strong style="color: var(--rose-lt)">part-time or internship roles</strong> in software development, and open to full-time opportunities from November 2026.  I bring strong backend engineering expertise in C#, .NET, and SQL Server, supported by hands-on experience in modern development practices and scalable system design.</p>
           <div class="quick-facts">
             <div class="fact"><div class="fact-k">Domain</div><div class="fact-v">Fintech & Banking</div></div>
             <div class="fact"><div class="fact-k">Specialty</div><div class="fact-v">C# · SQL · .NET</div></div>
@@ -768,9 +801,15 @@
         <div class="glass project-card reveal" style="transition-delay:0.05s">
           <div class="proj-header">
             <div>
-              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;flex-wrap:wrap;">
                 <span class="proj-dot"></span>
-                <h3 class="proj-title font-display">BestieCare Cleaning Service</h3>
+                <h3 class="proj-title font-display" style="margin:0;">BestieCare Cleaning Service</h3>
+
+                <!-- ✅ Ongoing badge -->
+                <span class="proj-status">
+                  <span class="dot"></span>
+                  (In Progress)
+                </span>
               </div>
               <p class="proj-desc">A multi-role web application for managing cleaning services. Features Role-Based Access Control (RBAC) for Customers, Cleaners, and Admins, integrated booking workflows, and branch-level analytics dashboards.</p>
             </div>
@@ -797,7 +836,7 @@
                 <span class="proj-dot"></span>
                 <h3 class="proj-title font-display">Trading Risk System</h3>
               </div>
-              <p class="proj-desc">Sole developer for a real-time trading risk management system. Integrated live market data APIs for FX and commodities trading and optimised SQL to achieve a ~30% improvement in query response time.</p>
+              <p class="proj-desc">Sole developer responsible for a real-time trading risk management system. Integrated live market data APIs for FX and commodities trading and optimised SQL to achieve a ~30% improvement in query response time.</p>
             </div>
           </div>
           <div class="pill-group">
