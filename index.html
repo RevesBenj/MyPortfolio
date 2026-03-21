@@ -745,7 +745,7 @@
       <div class="about-grid">
         <div class="glass about-card reveal" style="transition-delay:0.05s">
           <p>I'm a <strong>.NET Software Engineer</strong>and Technical Business Analyst with experience supporting enterprise systems across Singapore and the APAC region.</p>
-          <p style="margin-top:1rem">My background includes financial technology systems such as trading risk platforms, market data integration, ETL processes, and reporting automation. I work mainly with C#, ASP.NET, and SQL Server, focusing on building stable and reliable systems.</p>
+          <p style="margin-top:1rem">My background includes financial technology systems such as trading risk platforms, <strong>market data integration, ETL processes, and reporting automation</strong>. I work mainly with <strong>C#, ASP.NET, and SQL Server</strong>, focusing on building stable and reliable systems.</p>
           <p style="margin-top:1rem">I enjoy solving backend problems, improving database performance, and simplifying manual processes through automation.</p>
         </div>
 
@@ -826,117 +826,186 @@
   <div class="divider"></div>
 
   <!-- ───── PROJECTS ───── -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="section-eyebrow">What I've Built</p>
-        <h2 class="section-title">Selected Projects</h2>
-        <p class="section-sub">Enterprise systems, academic builds, and tools that solve real problems.</p>
-      </div>
-
-      <div class="projects-grid">
-
-        <div class="glass project-card reveal" style="transition-delay:0.05s">
-          <div class="proj-header">
-            <div>
-              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;flex-wrap:wrap;">
-                <span class="proj-dot"></span>
-                <h3 class="proj-title font-display" style="margin:0;">BestieCare Cleaning Service</h3>
-
-                <!-- ✅ Ongoing badge -->
-                <span class="proj-status">
-                  <span class="dot"></span>
-                  (In Progress)
-                </span>
-              </div>
-              <p class="proj-desc">A multi-role web application for managing cleaning services. Features Role-Based Access Control (RBAC) for Customers, Cleaners, and Admins, integrated booking workflows, and branch-level analytics dashboards.</p>
-            </div>
-            <a class="tag proj-link" href="https://github.com/RevesBenj/YCCIA_2511" target="_blank">
-              <svg width="11" height="11" fill="currentColor" viewBox="0 0 24 24" style="margin-right:3px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              Repo
-            </a>
-          </div>
-          <div class="pill-group">
-            <span class="skill-pill">Django</span><span class="skill-pill">Python</span>
-            <span class="skill-pill">SQLite</span><span class="skill-pill">Docker</span><span class="skill-pill">RBAC</span>
-          </div>
-          <ul class="proj-highlights">
-            <li><span class="proj-bullet"></span>Multi-branch support with role-based dashboards</li>
-            <li><span class="proj-bullet"></span>Full booking lifecycle: request → assign → complete</li>
-            <li><span class="proj-bullet"></span>Analytics summary for branch-level performance</li>
-          </ul>
-        </div>
-
-        <div class="glass project-card reveal" style="transition-delay:0.1s">
-          <div class="proj-header">
-            <div>
-              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
-                <span class="proj-dot"></span>
-                <h3 class="proj-title font-display">Trading Risk System</h3>
-              </div>
-              <p class="proj-desc">Sole developer responsible for a real-time trading risk management system. Integrated live market data APIs for FX and commodities trading and optimised SQL to achieve a ~30% improvement in query response time.</p>
-            </div>
-          </div>
-          <div class="pill-group">
-            <span class="skill-pill">C#</span><span class="skill-pill">ASP.NET 4.5</span>
-            <span class="skill-pill">SQL Server 2019</span><span class="skill-pill">FIX API</span><span class="skill-pill">SSRS</span>
-          </div>
-          <ul class="proj-highlights">
-            <li><span class="proj-bullet"></span>Real-time risk monitoring for live FX trading operations</li>
-            <li><span class="proj-bullet"></span>SQL performance tuning: indexes, execution plans, stored procedures</li>
-            <li><span class="proj-bullet"></span>Automated MAS / DTCC regulatory reporting</li>
-          </ul>
-        </div>
-
-        <div class="glass project-card reveal" style="transition-delay:0.15s">
-          <div class="proj-header">
-            <div>
-              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
-                <span class="proj-dot"></span>
-                <h3 class="proj-title font-display">AI CV ATS Analyzer</h3>
-              </div>
-              <p class="proj-desc">An AI-style CV and job description matching tool simulating an Applicant Tracking System (ATS). Extracts keywords, calculates match scores, and provides feedback to improve CV alignment.</p>
-            </div>
-            <a class="tag proj-link" href="https://github.com/RevesBenj/YCCIA_2511_MSE_PSE-Week8-A3" target="_blank">
-              <svg width="11" height="11" fill="currentColor" viewBox="0 0 24 24" style="margin-right:3px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              Repo
-            </a>
-          </div>
-          <div class="pill-group">
-            <span class="skill-pill">Python</span><span class="skill-pill">OOP</span>
-            <span class="skill-pill">Text Processing</span><span class="skill-pill">CLI</span><span class="skill-pill">Pylint</span>
-          </div>
-          <ul class="proj-highlights">
-            <li><span class="proj-bullet"></span>Keyword extraction and match-score breakdown</li>
-            <li><span class="proj-bullet"></span>Actionable feedback to improve CV–JD alignment</li>
-            <li><span class="proj-bullet"></span>Clean code standards enforced via Pylint</li>
-          </ul>
-        </div>
-
-        <div class="glass project-card reveal" style="transition-delay:0.2s">
-          <div class="proj-header">
-            <div>
-              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
-                <span class="proj-dot"></span>
-                <h3 class="proj-title font-display">Car Rental Architecture</h3>
-              </div>
-              <p class="proj-desc">A CLI application built with a strict layered architecture (Presentation, Application, Domain, Persistence). Automated business rules for availability checks and persistent Docker volume storage.</p>
-            </div>
-          </div>
-          <div class="pill-group">
-            <span class="skill-pill">Python</span><span class="skill-pill">SQLite</span>
-            <span class="skill-pill">Layered Arch.</span><span class="skill-pill">OOP</span><span class="skill-pill">Docker Compose</span>
-          </div>
-          <ul class="proj-highlights">
-            <li><span class="proj-bullet"></span>Layered architecture + repository pattern</li>
-            <li><span class="proj-bullet"></span>Auto-approval & preventive maintenance locking rules</li>
-            <li><span class="proj-bullet"></span>SQLite persistence with Docker volume-based storage</li>
-          </ul>
-        </div>
-
-      </div>
+ <section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">What I've Built</p>
+      <h2 class="section-title">Selected Projects</h2>
+      <p class="section-sub">Enterprise systems, academic builds, and tools that solve real problems.</p>
     </div>
-  </section>
+
+    <div class="projects-grid">
+
+      <!-- ================= BESTIECARE ================= -->
+      <div class="glass project-card reveal">
+        <div class="proj-header">
+          <div>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
+              <span class="proj-dot"></span>
+              <h3 class="proj-title font-display">BestieCare Cleaning Service</h3>
+
+
+              <span class="tag">🔒 Private</span>
+
+              <!-- LIVE DEMO BADGE -->
+              <span class="tag" style="background:rgba(37,99,235,0.15);border-color:rgba(37,99,235,0.4);color:#93C5FD;">
+                Live Demo
+              </span>
+            </div>
+
+            <p class="proj-desc">
+              A multi-role cleaning service web application built using Django with RBAC, booking workflows, and analytics dashboards.  
+              Deployed on PythonAnywhere for live demonstration.
+            </p>
+          </div>
+        </div>
+
+        <div class="pill-group">
+          <span class="skill-pill">Django</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">SQLite</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">RBAC</span>
+        </div>
+
+        <ul class="proj-highlights">
+          <li><span class="proj-bullet"></span>Multi-role system (Customer, Cleaner, Admin, Super Admin)</li>
+          <li><span class="proj-bullet"></span>Booking lifecycle with real-time updates</li>
+          <li><span class="proj-bullet"></span>Analytics dashboard for business insights</li>
+        </ul>
+
+        <!-- ACTION BUTTONS -->
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+
+          <!-- LIVE DEMO BUTTON -->
+          <a class="btn-primary"
+             href="https://your-pythonanywhere-url.com"
+             target="_blank">
+            Live Demo
+          </a>
+
+          <!-- REQUEST ACCESS -->
+          <a class="btn-ghost"
+             href="mailto:benjelyn_reves@yahoo.com?subject=Request%20Access%20-%20BestieCare&body=Hi%20Benj,%20I%20would%20like%20to%20request%20access%20to%20your%20BestieCare%20project.">
+            Request Access
+          </a>
+        </div>
+
+        <p style="font-size:0.7rem;color:#8892A4;margin-top:0.5rem;">
+          Private repository — access available upon request.
+        </p>
+      </div>
+
+
+      <!-- ================= TRADING RISK ================= -->
+      <div class="glass project-card reveal">
+        <div class="proj-header">
+          <div>
+            <div style="display:flex;gap:0.5rem;align-items:center;">
+              <span class="proj-dot"></span>
+              <h3 class="proj-title font-display">Trading Risk System</h3>
+            </div>
+
+            <p class="proj-desc">
+              Real-time trading risk management system integrating FX market data APIs.  
+              Optimised SQL queries achieving ~30% performance improvement.
+            </p>
+          </div>
+        </div>
+
+        <div class="pill-group">
+          <span class="skill-pill">C#</span>
+          <span class="skill-pill">ASP.NET</span>
+          <span class="skill-pill">SQL Server</span>
+          <span class="skill-pill">FIX API</span>
+        </div>
+
+        <ul class="proj-highlights">
+          <li><span class="proj-bullet"></span>Live risk monitoring for trading operations</li>
+          <li><span class="proj-bullet"></span>SQL tuning and performance optimisation</li>
+          <li><span class="proj-bullet"></span>Regulatory reporting automation</li>
+        </ul>
+      </div>
+
+
+      <!-- ================= AI CV ATS ================= -->
+      <div class="glass project-card reveal">
+        <div class="proj-header">
+          <div>
+            <div style="display:flex;gap:0.5rem;align-items:center;">
+              <span class="proj-dot"></span>
+              <h3 class="proj-title font-display">AI CV ATS Analyzer</h3>
+            </div>
+
+            <p class="proj-desc">
+              A Python-based ATS simulation tool that matches CVs with job descriptions and provides scoring and improvement feedback.
+            </p>
+          </div>
+
+          <a class="tag proj-link"
+             href="https://github.com/RevesBenj/YCCIA_2511_MSE_PSE-Week8-A3"
+             target="_blank">
+            Repo
+          </a>
+        </div>
+
+        <div class="pill-group">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">OOP</span>
+          <span class="skill-pill">Text Processing</span>
+          <span class="skill-pill">CLI</span>
+        </div>
+
+        <ul class="proj-highlights">
+          <li><span class="proj-bullet"></span>Keyword matching and scoring engine</li>
+          <li><span class="proj-bullet"></span>CV improvement suggestions</li>
+        </ul>
+      </div>
+
+
+      <!-- ================= CAR RENTAL ================= -->
+      <div class="glass project-card reveal">
+        <div class="proj-header">
+          <div>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
+              <span class="proj-dot"></span>
+              <h3 class="proj-title font-display">Car Rental Architecture</h3>
+
+              <span class="tag">🔒 Private</span>
+            </div>
+
+            <p class="proj-desc">
+              A CLI-based system using layered architecture and clean design principles, deployed with Docker Compose and SQLite persistence.
+            </p>
+          </div>
+        </div>
+
+        <div class="pill-group">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">SQLite</span>
+          <span class="skill-pill">Layered Arch.</span>
+          <span class="skill-pill">Docker</span>
+        </div>
+
+        <ul class="proj-highlights">
+          <li><span class="proj-bullet"></span>Clean architecture design</li>
+          <li><span class="proj-bullet"></span>Business rules automation</li>
+          <li><span class="proj-bullet"></span>Dockerised deployment</li>
+        </ul>
+
+        <!-- REQUEST ACCESS -->
+        <div style="margin-top:1rem;">
+          <a class="btn-ghost"
+             href="mailto:benjelyn_reves@yahoo.com?subject=Request%20Access%20-%20Car%20Rental&body=Hi%20Benj,%20I%20would%20like%20to%20request%20access%20to%20your%20Car%20Rental%20project.">
+            Request Access
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <div class="divider"></div>
 
@@ -1100,7 +1169,7 @@
         <div class="contact-blob"></div>
         <div class="contact-inner">
           <div>
-            <p class="contact-tagline font-display">Ready to bring 14 years of enterprise expertise to your team.</p>
+            <p class="contact-tagline font-display">Ready to contribute my experience while continuing to learn and grow within your team.</p>
             <p class="contact-body">
               I'm currently seeking <strong>part-time or internship roles</strong> in software development in Auckland, NZ.
               Whether it's backend systems, data engineering, or .NET - I'd love to explore how I can contribute.
